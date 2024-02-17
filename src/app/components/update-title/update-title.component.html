@@ -1,0 +1,18 @@
+<h2 mat-dialog-title> {{titleText}} </h2>
+<mat-dialog-content>
+
+    <form [formGroup]="titleForm" (submit)="save()">
+        <mat-form-field class="mr-1" appearance="fill">
+            <mat-label>Título</mat-label>
+            <input matInput placeholder="Ingrese un título" formcontrolName="titleText">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <input   formControlName="img" type="file" (change)="handleFileInput($event)">
+    </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="mr-1" mat-button color="primary" (click)="save()">Guardar</button>
+  <button class="mr-1" mat-button color="basic" [mat-dialog-close]="null" cdkFocusInitial>Cerrar</button>
+</mat-dialog-actions>

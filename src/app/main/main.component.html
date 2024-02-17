@@ -1,0 +1,30 @@
+<mat-drawer-container class="drawer-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <p>Auto-resizing sidenav</p>
+
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <button tyexample-sidenav-contentpe="button" mat-button (click)="drawer.toggle()">
+            &rarr;
+        </button>
+        <div clas="conteiner-fluid">
+            <div class="row">
+
+                <mat-card class="col-lg-4 col-md-6 col-sm-12"  *ngFor="let title of titles">
+                    <mat-card-header>
+                        {{title.titleText}}
+                    </mat-card-header>
+                    <mat-card-content>  
+                        <img mat-card-image class="title-img" [src]="title.primaryImage?.url" alt="Photo of a Shiba Inu">
+                    </mat-card-content>  
+                    <mat-card-actions align="end">
+                        <button class="ml-1" mat-stroked-button color="primary" (click)="editTitle(title)">Editar</button>
+                        <button mat-stroked-button color="warm">Eliminar</button>
+                      </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+</mat-drawer-container>
